@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68,<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nest"
+version = "1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "cflib",
+  "dotenv",
+  "python-dotenv",
+  "importlib_resources",
+  "libusb-package",
+  "numpy==2.2.6",
+  "opencv-contrib-python==4.12.0.88",
+  "packaging",
+  "scipy",
+  "watchdog",
+  "pandas",
+  "pygame",
+  "setuptools>=68,<81",
+  "notebook==7.4.7"
+]
+description = "Networked ensembe of swarm things."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Benzon Carlitos Salazar", email = "salazarbc24@uww.edu" }
+]
+
+[project.scripts]
+fly = "cli.main:cli"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
