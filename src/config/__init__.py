@@ -95,7 +95,7 @@ def load_settings_from_env(
     uri = radio.uri_by_channel.get(str(channel), "")
     uri = uri.strip() or None
     if not dry_run and not uri:
-      raise ValueError(f"No URI configured for channel={channel}. Set CF_URI_{channel} in .env")
+      raise ValueError(f"No URI configured for channel={channel}. Set RADIO_CHANNEL_{channel} in .env")
 
   # UDP mode: URI might come from env; keep simple for now.
   if mode == "udp":
